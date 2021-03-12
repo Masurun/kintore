@@ -1,0 +1,18 @@
+<h3>トップページ</h3>
+<h3><%= link_to '筋トレ投稿', new_record_path%></h3>
+<h3><%= link_to '筋トレ一覧', records_path%></h3>
+<h3><%= link_to '食事投稿・コンディション', new_food_path%></h3>
+<h3><%= link_to '食事一覧・コンディション',foods_path%></h3>
+
+
+
+<% @foods.each do |food|%>
+        <%=food.weight%>
+        <%=food.fat_per%>
+        <%=image_tag food.image4 if food.image4.attached?%>
+        <%=image_tag food.image5 if food.image5.attached?%>
+        <%=image_tag food.image6 if food.image6.attached?%>
+
+  <%= link_to '編集', edit_food_path(food.id)%>
+    <%= link_to '削除', food_path(food.id),method: :delete%>
+<% end %>

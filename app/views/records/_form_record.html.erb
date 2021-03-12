@@ -1,13 +1,6 @@
 <div class = "form">
         <div class = "form-body">
           <%=form_with model: @record ,local: true do |f|%>
-
-            <div class="weight-bold-text">
-              フリー記入欄
-               <span class ="optional">(任意)</span>
-            </div>
-             <%=f.text_area :content,class: "record-content",id:"content",placeholder:"感想、反省、追加メニューなど自由にご記入ください",rows:"7",maxlength:"300"%>
-
              <div class = "img-upload">
                 <div class="weight-bold-text">
                   画像（体重・自身の体・食事など自由に投稿ください）
@@ -18,25 +11,14 @@
               <p>
                 クリックしてファイルをアップロード
               </p>
-                <%= f.file_field :images, name: 'record[images][]', id: 'record_image' %>
+                <%= f.file_field :image1%>
                 <div id = "image-list"></div>
-                <% @record.images.each do |image| %>
-                <%= image_tag image, class: 'images' %>
-                <% end %>
+                <%= f.file_field :image2 %>
+                <div id = "image-list"></div>
+                <%= f.file_field :image3 %>
+                <div id = "image-list"></div>
              </div>
-
-            <div class="weight-bold-text">
-              体重
-              <span class ="indispensable">(必須)</span>
-            </div>
-             <%=f.text_field :weight,class: "record-content",id:"weight"%>
-           <div class="weight-bold-text">
-              体脂肪
-              <span class ="optional">(任意)</span>
-            </div>
-             <%=f.text_field :fat_per,class: "record-content",id:"fat_per"%>
-
-           <div class="weight-bold-text">
+          <div class="weight-bold-text">
               フリーウエイト、下記に無いメニュー
                <span class ="optional">(任意)</span>
             </div>

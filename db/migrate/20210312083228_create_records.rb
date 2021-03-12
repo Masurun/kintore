@@ -1,9 +1,6 @@
 class CreateRecords < ActiveRecord::Migration[6.0]
   def change
     create_table :records do |t|
-      t.text        :content
-      t.integer     :weight,              null: false
-      t.integer     :fat_per
       t.text        :free_info       
       t.integer     :shoulder_id         
       t.string      :shoulder_info     

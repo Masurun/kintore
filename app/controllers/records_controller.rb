@@ -28,7 +28,6 @@ class RecordsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @record.update(record_params)
       redirect_to records_path
     else
@@ -37,7 +36,6 @@ class RecordsController < ApplicationController
   end
 
   def destroy
-   
       if @record.destroy
         redirect_to records_path
       end
@@ -54,8 +52,6 @@ class RecordsController < ApplicationController
       :abs_id,
       :spine_id,
       :leg_id,
-      :weight,
-      :fat_per ,  
       :free_info,
       :shoulder_info,
       :arm_info,
@@ -63,8 +59,10 @@ class RecordsController < ApplicationController
       :abs_info,     
       :spine_info,    
       :leg_info,
-      :content,
-      images: []
+      :image1,
+      :image2,
+      :image3
+
       ).merge(user_id: current_user.id)
   end
   def set_record
