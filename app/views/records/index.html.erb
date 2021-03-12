@@ -1,0 +1,9 @@
+<h3>トップページ</h3>
+<h3><%= link_to '新規投稿', new_record_path%></h3>
+<% @recotds.each do |record| %>
+  <%= record.content%>
+    <%= record.food%>
+        <%= record.weight%>
+  <%= image_tag record.image if message.image.present? %>
+  <%= link_to '編集', edit_message_path(message.id)%>
+<% end %>
