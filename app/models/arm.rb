@@ -1,4 +1,4 @@
-class Pref < ActiveHash::Base
+class Arm < ActiveHash::Base
   self.data = [
    
     { id: 2, name: 'トライセプトプレス' },
@@ -12,7 +12,6 @@ class Pref < ActiveHash::Base
     { id: 10, name: 'トライセップ' },
     { id: 11, name: 'ディップチンアシスト' }
   ]
-
   include ActiveHash::Associations
-  has_many :posts
+  has_many :records
 end
