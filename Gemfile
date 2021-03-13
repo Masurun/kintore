@@ -56,3 +56,4 @@ gem 'devise'
 gem 'active_hash'
 gem 'mini_magick'
 gem 'pry-rails'
+gem "carrierwave"

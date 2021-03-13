@@ -1,0 +1,6 @@
+<h3>しつもん</h3>
+<h3><%=link_to '質問投稿',new_question_path%></h3>
+<%@questions.each do |question|%>
+<%= question.content%>
+<%= video_tag(question.video_question.to_s,height: "50%", width: "50%" ,:controls => true) %> 
+<%end%>
