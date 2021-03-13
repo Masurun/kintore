@@ -1,9 +1,15 @@
-<h3>トップページ</h3>
-<h3><%= link_to '新規投稿', new_record_path%></h3>
-<% @recotds.each do |record| %>
-  <%= record.content%>
-    <%= record.food%>
-        <%= record.weight%>
-  <%= image_tag record.image if message.image.present? %>
-  <%= link_to '編集', edit_message_path(message.id)%>
+<h3>record</h3>
+<h3><%= link_to '筋トレ投稿', new_record_path%></h3>
+<h3><%= link_to '食事投稿・コンディション', new_food_path%></h3>
+<h3><%= link_to '食事一覧・コンディション',foods_path%></h3>
+
+
+<% @records.each do |record|%>
+       
+        <%=image_tag record.image1 if record.image1.attached?%>
+        <%=image_tag record.image2 if record.image2.attached?%>
+        <%=image_tag record.image3 if record.image3.attached?%>
+
+  <%= link_to '編集', edit_record_path(record.id)%>
+    <%= link_to '削除', record_path(record.id),method: :delete%>
 <% end %>

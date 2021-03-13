@@ -1,31 +1,19 @@
 class CreateRecords < ActiveRecord::Migration[6.0]
   def change
     create_table :records do |t|
-      t.text        :food,                null: false
-      t.text        :content
-      t.integer     :weight,              null: false
-      t.integer     :fat_per
-      t.string      :free_name         
-      t.integer     :free_count         
-      t.integer     :free_weight
+      t.text        :free_info       
       t.integer     :shoulder_id         
-      t.integer     :shoulder_count      
-      t.integer     :shoulder_weight
+      t.string      :shoulder_info     
       t.integer     :arm_id
-      t.integer     :arm_count
-      t.integer     :arm_weight
+      t.string      :arm_info
       t.integer     :breast_id
-      t.integer     :breast_count
-      t.integer     :breast_weight
+      t.string      :breast_info
       t.integer     :abs_id
-      t.integer     :abs_count
-      t.integer     :abs_weight
+      t.string      :abs_info
       t.integer     :spine_id
-      t.integer     :spine_count
-      t.integer     :spine_weight
+      t.string      :spine_info
       t.integer     :leg_id
-      t.integer     :leg_count
-      t.integer     :leg_weight
+      t.string      :leg_info
       t.references  :user,               foreign_key: true
       t.timestamps
     end

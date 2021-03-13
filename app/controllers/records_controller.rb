@@ -29,7 +29,7 @@ class RecordsController < ApplicationController
 
   def update
     if @record.update(record_params)
-      redirect_to record_path(@record.id)
+      redirect_to records_path
     else
       render :edit
     end
@@ -46,34 +46,26 @@ class RecordsController < ApplicationController
   private
   def record_params
     params.require(:record).permit(
-      :shoulder_id
-      :arm_id
-      :breast_id
-      :abs_id
-      :spine_id
-      :leg_id
-      :weight
-      :fat_per   
-      :free_count
-      :free_weight  
-      :shoulder_count
-      :shoulder_weight
-      :arm_count
-      :arm_weight
-      :breast_count
-      :breast_weight
-      :abs_count
-      :abs_weight
-      :spine_count
-      :spine_weight
-      :leg_count
-      :leg_weight
-      :content
-      :free_name
-      :food
+      :shoulder_id,
+      :arm_id,
+      :breast_id,
+      :abs_id,
+      :spine_id,
+      :leg_id,
+      :free_info,
+      :shoulder_info,
+      :arm_info,
+      :breast_info,    
+      :abs_info,     
+      :spine_info,    
+      :leg_info,
+      :image1,
+      :image2,
+      :image3
+
       ).merge(user_id: current_user.id)
   end
   def set_record
-    @post=Record.find(params[:id])
+    @record=Record.find(params[:id])
   end
 end

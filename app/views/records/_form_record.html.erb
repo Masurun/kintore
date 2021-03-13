@@ -1,0 +1,108 @@
+<div class = "form">
+        <div class = "form-body">
+          <%=form_with model: @record ,local: true do |f|%>
+             <div class = "img-upload">
+                <div class="weight-bold-text">
+                  画像（体重・自身の体・食事など自由に投稿ください）
+                    <span class ="optional">（任意）</span>
+                </div>  
+             </div>
+             <div class = "click-upload">
+              <p>
+                クリックしてファイルをアップロード
+              </p>
+                <%= f.file_field :image1%>
+                <div id = "image-list"></div>
+                <%= f.file_field :image2 %>
+                <div id = "image-list"></div>
+                <%= f.file_field :image3 %>
+                <div id = "image-list"></div>
+             </div>
+          <div class="weight-bold-text">
+              フリーウエイト、下記に無いメニュー
+               <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_area :content,class: "record-content",id:"content",rows:"7",maxlength:"300"%>
+
+            <div class="weight-bold-text">
+              肩
+              <span class ="optional">(任意)</span>
+            </div>
+              <%= f.collection_select(:shoulder_id,Shoulder.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"shoulder"})%>
+              
+              <div class="weight-bold-text">
+              肩回数、その他備考（例:筋肉痛だったなど）
+              <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_field :shoulder_info,class: "record-content",id:"shoulder_info"%>
+
+            <div class="weight-bold-text">
+              腕
+              <span class ="optional">(任意)</span>
+            </div>
+            <%= f.collection_select(:arm_id,Arm.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"arm"})%>
+              
+              <div class="weight-bold-text">
+              腕回数、その他備考（例:筋肉痛だったなど）
+              <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_field :arm_info,class: "record-content",id:"arm_info"%>
+
+             <div class="weight-bold-text">
+              胸
+              <span class ="optional">(任意)</span>
+            </div>
+              <%= f.collection_select(:breast_id,Breast.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"breast"})%>
+              
+              <div class="weight-bold-text">
+              胸回数、その他備考（例:筋肉痛だったなど）
+              <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_field :breast_info,class: "record-content",id:"breast_info"%>
+
+             <div class="weight-bold-text">
+              お腹
+              <span class ="optional">(任意)</span>
+            </div>
+              <%= f.collection_select(:ads_id,Abs.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"abs"})%>
+              
+              <div class="weight-bold-text">
+              お腹回数、その他備考（例:筋肉痛だったなど）
+              <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_field :abs_info,class: "record-content",id:"abs_info"%>
+
+             <div class="weight-bold-text">
+              背中
+              <span class ="optional">(任意)</span>
+            </div>
+              <%= f.collection_select(:spine_id,Spine.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"spine"})%>
+              
+              <div class="weight-bold-text">
+              背中回数、その他備考（例:筋肉痛だったなど）
+              <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_field :spine_info,class: "record-content",id:"spine_info"%>
+
+             <div class="weight-bold-text">
+              足
+              <span class ="optional">(任意)</span>
+            </div>
+              <%= f.collection_select(:leg_id,Leg.all, :id, :name, {include_blank: true} ,{class:"select-box",id:"leg"})%>
+              
+              <div class="weight-bold-text">
+              足回数、その他備考（例:筋肉痛だったなど）
+              <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_field :leg_info,class: "record-content",id:"leg_info"%>
+
+            
+              <div class = "post-btn-content">
+                <%=f.submit "投稿する",class:"posts-btn"%>
+                <%=link_to '戻る',root_path,class: "back-btn"%>
+              </div>
+          <%end%>
+        </div>
+      </div>
+  </div>
+</div>

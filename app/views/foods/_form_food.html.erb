@@ -1,0 +1,70 @@
+<div class = "form">
+        <div class = "form-body">
+          <%=form_with model: @food ,local: true do |f|%>
+
+              <div class="weight-bold-text">
+              朝食事
+              <span class ="indispensable">(任意)</span>
+            </div>
+             <%=f.text_field :weight,class: "record-content",id:"weight"%>
+                <%= f.file_field :image4%>
+                <div id = "image-list"></div>
+
+                <div class="weight-bold-text">
+              昼食事
+              <span class ="indispensable">(任意)</span>
+            </div>
+             <%=f.text_field :weight,class: "record-content",id:"weight"%>
+                <%= f.file_field :image5 %>
+                <div id = "image-list"></div>
+
+                <div class="weight-bold-text">
+              夜食事
+              <span class ="indispensable">(任意)</span>
+            </div>
+             <%=f.text_field :weight,class: "record-content",id:"weight"%>
+                <%= f.file_field :image6 %>
+                <div id = "image-list"></div>
+
+
+                <div class="weight-bold-text">
+              間食(画像)
+              <span class ="indispensable">(任意)</span>
+            </div>
+                <%= f.file_field :image7%>
+                <div id = "image-list"></div>
+                <%= f.file_field :image8%>
+                <div id = "image-list"></div>
+                <%= f.file_field :image9%>
+                <div id = "image-list"></div>
+                
+             </div>
+
+            <div class="weight-bold-text">
+              体重
+              <span class ="indispensable">(必須)</span>
+            </div>
+             <%=f.text_field :weight,class: "record-content",id:"weight"%>
+           <div class="weight-bold-text">
+              体脂肪
+              <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_field :fat_per,class: "record-content",id:"fat_per"%>
+
+              <div class="weight-bold-text">
+              フリー記入欄
+               <span class ="optional">(任意)</span>
+            </div>
+             <%=f.text_area :other,id:"other",placeholder:"本日の体調や食事について追加でなにか記入したい場合ご記入ください",rows:"7",maxlength:"300"%>
+
+             
+
+              <div class = "post-btn-content">
+                <%=f.submit "投稿する",class:"posts-btn"%>
+                <%=link_to '戻る',root_path,class: "back-btn"%>
+              </div>
+          <%end%>
+        </div>
+      </div>
+  </div>
+</div>
